@@ -13,9 +13,11 @@
     "@sinclair/typebox": "^0.32.34",
     "drizzle-orm": "^0.31.2",
     "drizzle-typebox": "^0.1.1",
-    "elysia": "latest"
+    "elysia": "latest",
+    "jsonwebtoken": "^9.0.2"
   },
   "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.6",
     "bun-types": "latest",
     "drizzle-kit": "^0.22.7"
   },
