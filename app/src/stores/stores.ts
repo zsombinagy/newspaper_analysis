@@ -6,4 +6,5 @@ export type AdminInfoType = z.infer<typeof adminInfoSchema>
 
 export const isLoggedIn = writable(false)
 
-export const adminInfo = writable<AdminInfoType>(null)
+
+export const anyLoginTrouble = writable(false)
