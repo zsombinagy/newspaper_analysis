@@ -2,11 +2,7 @@
 	import './styles.css';
 </script>
 
-<div class="app">
-
-	<p>Hello</p>
-	<main>
+<div class="app w-full h-full">
 		<slot />
-	</main>
 </div>
 

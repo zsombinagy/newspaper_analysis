@@ -5,6 +5,7 @@ import { getUserInfo } from "../../api/googleAuth";
 import { treaty } from "@elysiajs/eden";
 import { type AUTHORIZATION } from "../../../../backend/src/routes/authorization"
 import { PUBLIC_RPC_URL, PUBLIC_GOOGLE_CLIENT_ID, PUBLIC_GOOGLE_REDIRECT, PUBLIC_CLIENT_SECRET } from "$env/static/public";
+import {  adminInfo } from "../../stores/stores";
 
 export const GET = async (event: RequestEvent) => {
 
@@ -27,32 +28,31 @@ export const GET = async (event: RequestEvent) => {
     const userInfoResponse = await getUserInfo(user.access_token);
     if (!userInfoResponse.success) return
 
-
+    adminInfo.set(userInfoResponse.data)
     const app = treaty<AUTHORIZATION>(PUBLIC_RPC_URL)
 
+    
     const responseCheckAdmin = await app.api.admin.login.post(userInfoResponse.data)
     
 
-    if(!responseCheckAdmin.data?.token) {
-        console.log(responseCheckAdmin)
-        throw redirect(303, "/")
-    }
-        
+    if(responseCheckAdmin.data?.token) {          
+      const token = responseCheckAdmin.data.token
+      
 
-    
-    const token = responseCheckAdmin.data.token
+      cookies.set('session', token, {
+        path: "/",
+        httpOnly: true, 
+        sameSite: 'lax',
+        secure: true,
+        maxAge: 60 * 60 * 24 * 30
+      })
+    }   
 
-    cookies.set('session', token, {
-      path: "/",
-      httpOnly: true, 
-      sameSite: 'lax',
-      secure: true,
-      maxAge: 60 * 60 * 24 * 30
-    })
+  
 
     
   } catch (err) {
     console.log("Error logging in with Google", err);
   }
-  throw redirect(303, "/dashboard");
+  throw redirect(303, "/j9l4u8eojl");
 };
