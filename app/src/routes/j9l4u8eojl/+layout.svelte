@@ -1,4 +1,7 @@
-<script>;
+<script>
+  import AdminNav from "../../components/AdminNav.svelte";
+
+;
 </script>
 
 <div class="app h-full">
