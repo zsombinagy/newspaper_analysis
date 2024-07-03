@@ -104,6 +104,7 @@ export const authController = new Elysia()
         const receivedAdmin = await database.update(admins).set({
             subId: adminData.sub,
             name: adminData.name
+            
         }).where(eq(admins.email, adminData.email)).returning()
 
         const token = await sign(adminData)

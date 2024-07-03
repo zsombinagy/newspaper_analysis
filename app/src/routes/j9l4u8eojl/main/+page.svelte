@@ -1,5 +1,5 @@
 
-<script>
+<script lang="ts">
     import AdminNav from "../../../components/AdminNav.svelte";
 
 </script>

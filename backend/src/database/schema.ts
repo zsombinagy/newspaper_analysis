@@ -49,5 +49,6 @@ export const admins = pgTable("admins", {
     id: uuid("id").primaryKey().defaultRandom(),
     subId: text("subId").default(""),
     name: text("name").default(""),    
-    email: text("email").notNull() 
+    email: text("email").notNull(),
+    picture: text("picture").default("")
 })

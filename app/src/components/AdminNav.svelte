@@ -1,10 +1,16 @@
-<script>
+<script lang="ts">
+  import { goto } from "$app/navigation";
   import { fly } from "svelte/transition";
+  
   let isMenuOpen = false;
 
   const toggleMenu = () => {
     isMenuOpen = !isMenuOpen;
   };
+
+  const adminName = window.localStorage.getItem("adminName")
+  const adminEmail = window.localStorage.getItem("adminEmail")
+
 </script>
 
 <nav
@@ -13,8 +19,8 @@
   <div class="">
     <a href="/j9l4u8eojl/admin">
       <div class="">
-        <p>User Name</p>
-        <p class="hidden">User Email</p>
+        <p>{adminName}</p>
+        <p class="hidden">{adminEmail}</p>
       </div>
     </a>
   </div>

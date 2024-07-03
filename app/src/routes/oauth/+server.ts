@@ -6,6 +6,7 @@ import { treaty } from "@elysiajs/eden";
 import { type AUTHORIZATION } from "../../../../backend/src/routes/authorization"
 import { PUBLIC_RPC_URL, PUBLIC_GOOGLE_CLIENT_ID, PUBLIC_GOOGLE_REDIRECT, PUBLIC_CLIENT_SECRET } from "$env/static/public";
 import { error } from '@sveltejs/kit';
+import type { AdminInfoType } from "../../stores/stores";
 
 
 
@@ -15,6 +16,7 @@ export const GET = async (event: RequestEvent) => {
   const { url, cookies} = event
   const code = await url.searchParams.get("code");
 
+  let adminData: AdminInfoType
 
   try {
     const oAuth2Client = new OAuth2Client(
@@ -30,28 +32,25 @@ export const GET = async (event: RequestEvent) => {
     const user = oAuth2Client.credentials;
   
 
-    const userInfoResponse = await getUserInfo(user.access_token);
-    if (!userInfoResponse.success) {
-   
+    const adminInfoResponse = await getUserInfo(user.access_token);
+    if (!adminInfoResponse.success)   
         throw error(403,"Forbidden: Failed to fetch user info" )
-    }
-    
-    
+     
 
     const app = treaty<AUTHORIZATION>(PUBLIC_RPC_URL)
 
 
 
-
-    const responseCheckAdmin = await app.api.admin.login.post(userInfoResponse.data)
+    const responseCheckAdmin = await app.api.admin.login.post(adminInfoResponse.data)
     
 
     if(!responseCheckAdmin.data?.token) 
       throw error(403, "Forbidden: Admin is not authorized to access this resource")     
     
     
-    const token = responseCheckAdmin.data.token
-    
+    const token = responseCheckAdmin.data.token    
+
+    adminData = adminInfoResponse.data
 
     cookies.set('session', token, {
       path: "/",
@@ -64,8 +63,11 @@ export const GET = async (event: RequestEvent) => {
     
     
   } catch (err) {
-  
+    console.log(err)
     throw error(500, "Internal Server Error")
   }
-  throw redirect(303, "/j9l4u8eojl");
+  const name = encodeURIComponent(adminData.name);
+  const email = encodeURIComponent(adminData.email); 
+
+  throw redirect(303, `/set-local-storage?name=${name}&email=${email}`)
 };
