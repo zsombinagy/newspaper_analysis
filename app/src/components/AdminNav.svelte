@@ -1,24 +1,30 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
   import { fly } from "svelte/transition";
+  import { onMount } from 'svelte';
   
   let isMenuOpen = false;
+  let adminName = '';
+  let adminEmail = '';
+  let adminPicture = '';
 
   const toggleMenu = () => {
     isMenuOpen = !isMenuOpen;
   };
 
-  const adminName = window.localStorage.getItem("adminName")
-  const adminEmail = window.localStorage.getItem("adminEmail")
-
+  onMount(() => {
+    adminName = window.localStorage.getItem("adminName") || '';
+    adminEmail = window.localStorage.getItem("adminEmail") || '';
+    adminPicture = window.localStorage.getItem("adminPicture") || '';
+  });
 </script>
 
 <nav
-  class="w-full bg-main_blue text-white flex justify-between py-2 px-5 font-playfair"
->
+  class="w-full bg-main_blue text-white flex justify-between items-center font-playfair h-16 px-5">
   <div class="">
     <a href="/j9l4u8eojl/admin">
-      <div class="">
+      <div class="flex justify-between items-center">
+        <img src={adminPicture} alt="" class="size-8 mr-3 rounded-lg">
         <p>{adminName}</p>
         <p class="hidden">{adminEmail}</p>
       </div>
@@ -39,7 +45,7 @@
     ></span>
   </button>
   {#if isMenuOpen}
-    <div class="absolute top-10 left-0 bg-main_blue w-full opacity-80"  transition:fly={{ x: 0, y: 0,duration: 1000}}>
+    <div class="absolute top-16 left-0 bg-main_blue w-full opacity-80"  transition:fly={{ x: 0, y: 0,duration: 1000}}>
       <ul class="flex justify-center flex-col items-center pt-3">
         <li><a href="/j9l4u8eojl/ownProjects">Saját Projekteim</a></li>
         <li><a href="/j9l4u8eojl/allProjects">Összes projekt</a></li>

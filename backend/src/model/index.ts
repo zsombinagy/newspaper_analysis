@@ -60,7 +60,8 @@ export const ArticleSchema = createInsertSchema(articles)
 export const adminInfoSchema = Type.Object({  
   sub: Type.String(),
   name: Type.String(),
-  email: Type.String()
+  email: Type.String(),
+  picture: Type.String()
 })
 
 export const newAdminSchema = Type.Object({

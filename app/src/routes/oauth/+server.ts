@@ -35,7 +35,7 @@ export const GET = async (event: RequestEvent) => {
     const adminInfoResponse = await getUserInfo(user.access_token);
     if (!adminInfoResponse.success)   
         throw error(403,"Forbidden: Failed to fetch user info" )
-     
+    
 
     const app = treaty<AUTHORIZATION>(PUBLIC_RPC_URL)
 
@@ -67,7 +67,8 @@ export const GET = async (event: RequestEvent) => {
     throw error(500, "Internal Server Error")
   }
   const name = encodeURIComponent(adminData.name);
-  const email = encodeURIComponent(adminData.email); 
+  const email = encodeURIComponent(adminData.email);
+  const picture = encodeURIComponent(adminData.picture)
 
-  throw redirect(303, `/set-local-storage?name=${name}&email=${email}`)
+  throw redirect(303, `/set-local-storage?name=${name}&email=${email}&picture=${picture}`)
 };
