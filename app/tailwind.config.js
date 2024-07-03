@@ -7,7 +7,8 @@ export default {
         transparent: 'transparent',
         main_blue: '#036487',
         main_yellow: '#ffc700',
-        main_error: "#FF0000"
+        main_error: "#FF0000",
+        main_purple: "#024060"
 
       },
       fontFamily: {

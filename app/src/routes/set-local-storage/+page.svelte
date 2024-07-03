@@ -14,5 +14,6 @@
       localStorage.setItem("adminPicture", adminPicture)
       goto("/j9l4u8eojl");
     }
+
   });
 </script>

@@ -20,13 +20,16 @@
 </script>
 
 <nav
-  class="w-full bg-main_blue text-white flex justify-between items-center font-playfair h-16 px-5">
+  class="w-full bg-main_blue text-white flex justify-between items-center font-playfair h-16 px-5 shadow-lg shadow-main_purple">
   <div class="">
     <a href="/j9l4u8eojl/admin">
       <div class="flex justify-between items-center">
         <img src={adminPicture} alt="" class="size-8 mr-3 rounded-lg">
-        <p>{adminName}</p>
-        <p class="hidden">{adminEmail}</p>
+        <div>
+            <p class="text-base md:text-xl">{adminName}</p>
+            <p class="hidden md:block text-xs">{adminEmail}</p>
+        </div>
+
       </div>
     </a>
   </div>
@@ -45,14 +48,27 @@
     ></span>
   </button>
   {#if isMenuOpen}
-    <div class="absolute top-16 left-0 bg-main_blue w-full opacity-80"  transition:fly={{ x: 0, y: 0,duration: 1000}}>
+    <div class="absolute top-16 left-0 bg-main_blue w-full opacity-80 border-t-2 border-main_yellow md:hidden"  transition:fly={{ x: 0, y: 0,duration: 1000}}>
       <ul class="flex justify-center flex-col items-center pt-3">
-        <li><a href="/j9l4u8eojl/ownProjects">Saját Projekteim</a></li>
-        <li><a href="/j9l4u8eojl/allProjects">Összes projekt</a></li>
-        <li><a href="/j9l4u8eojl/newPorject">Új cikk elemzés</a></li>
+        <li class="pb-3"><a href="/j9l4u8eojl/ownProjects" class="border-b-2 border-white">Saját Projekteim</a></li>
+        <li class="pb-3"><a href="/j9l4u8eojl/allProjects" class="border-b-2 border-white">Összes projekt</a></li>
+        <li class="pb-3"><a href="/j9l4u8eojl/newPorject" class="border-b-2 border-white">Új cikk elemzés</a></li>
       </ul>
     </div>
   {/if}
+  <div class="hidden md:flex items-center h-full">
+    <ul class="flex items-center h-full">
+      <li class="flex items-center align-middle h-full px-2 hover:bg-main_purple rounded">
+        <a href="/j9l4u8eojl/ownProjects" class="">Saját Projekteim</a>
+      </li>
+      <li class="flex items-center h-full px-2 hover:bg-main_purple rounded">
+        <a href="/j9l4u8eojl/allProjects" class="">Összes projekt</a>
+      </li>
+      <li class="flex items-center h-full px-2 hover:bg-main_purple rounded">
+        <a href="/j9l4u8eojl/newPorject" class="">Új cikk elemzés</a>
+      </li>
+    </ul>
+  </div>
 </nav>
 
 <style>
