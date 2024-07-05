@@ -20,7 +20,7 @@
 </script>
 
 <nav
-  class="w-full bg-main_blue text-white flex justify-between items-center font-playfair h-16 px-5 shadow-lg shadow-main_purple">
+  class="w-full bg-main_blue text-white flex justify-between items-center font-playfair h-16 px-5 shadow-lg shadow-main_shadow_blue">
   <div class="">
     <a href="/j9l4u8eojl/admin">
       <div class="flex justify-between items-center">
@@ -50,9 +50,9 @@
   {#if isMenuOpen}
     <div class="absolute top-16 left-0 bg-main_blue w-full opacity-80 border-t-2 border-main_yellow md:hidden"  transition:fly={{ x: 0, y: 0,duration: 1000}}>
       <ul class="flex justify-center flex-col items-center pt-3">
-        <li class="pb-3"><a href="/j9l4u8eojl/ownProjects" class="border-b-2 border-white">Saját Projekteim</a></li>
+        <li class="pb-3"><a href="/j9l4u8eojl/ownprojects" class="border-b-2 border-white">Saját Projekteim</a></li>
         <li class="pb-3"><a href="/j9l4u8eojl/allProjects" class="border-b-2 border-white">Összes projekt</a></li>
-        <li class="pb-3"><a href="/j9l4u8eojl/newPorject" class="border-b-2 border-white">Új cikk elemzés</a></li>
+        <li class="pb-3"><a href="/j9l4u8eojl/newproject" class="border-b-2 border-white">Új cikk elemzés</a></li>
       </ul>
     </div>
   {/if}
@@ -65,7 +65,7 @@
         <a href="/j9l4u8eojl/allProjects" class="">Összes projekt</a>
       </li>
       <li class="flex items-center h-full px-2 hover:bg-main_purple rounded">
-        <a href="/j9l4u8eojl/newPorject" class="">Új cikk elemzés</a>
+        <a href="/j9l4u8eojl/newproject" class="">Új cikk elemzés</a>
       </li>
     </ul>
   </div>
