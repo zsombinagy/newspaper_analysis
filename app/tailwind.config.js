@@ -8,7 +8,8 @@ export default {
         main_blue: '#036487',
         main_yellow: '#ffc700',
         main_error: "#FF0000",
-        main_shadow_blue: "#024060"
+        main_shadow_blue: "#024060",
+        main_shadow_gray: "#d9d9d9"
 
       },
       fontFamily: {

@@ -10,4 +10,5 @@ export const load = async (event: RequestEvent) =>  {
         throw redirect(302, '/j9l4u8eojl')
 
     } 
+
 }
