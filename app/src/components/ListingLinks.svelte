@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import {fly } from "svelte/transition"
-  import {flip} from "svelte/animate"
+ 
 
   let links: string[] = [];
   let text = ""
@@ -29,6 +29,7 @@
       .catch((err) => {
         console.error("Failed to copy the link:", err);
       });
+      alert("Copied")
   };
 
   const handleRemove = (linkToDelete: string) => {
@@ -41,18 +42,18 @@
 <div class="w-full flex items-center flex-col">
   <form
     class="bg-white border-main_blue w-11/12 border-2 mt-10
-     rounded flex px-1 py-2 justify-between focus:border-purple-color
-      form-focus md:py-[0.125rem] md:px-5 shadow-main_shadow_blue shadow
-      md:w-3/6 md:mt-20"
+     rounded flex px-3 py-2 justify-between focus:border-purple-color
+      form-focus md:py-[0.125rem] shadow-main_shadow_blue shadow
+      md:w-3/6 md:mt-20 md:px-5 lg:text-3xl"
   >
     <input
-      class="text-xl focus:outline-none lg:text-base ml-2"
+      class="text-xl focus:outline-none lg:text-base md:grow"
       type="text"
       placeholder="cikk linkek"
       bind:value={text}
     />
     <button
-      class="text-4xl align-middle pb-1 button-focus lg:text-2xl text-main_yellow"
+      class="text-4xl align-middle pb-1 button-focus lg:text-2xl text-main_yellow md:ml-2 "
       type="button"
       on:click={handleEnter}>&#8594;</button
     >
