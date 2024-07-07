@@ -20,7 +20,7 @@
 </script>
 
 <nav
-  class="w-full bg-main_blue text-white flex justify-between items-center font-playfair h-16 px-5 shadow-lg shadow-main_shadow_blue">
+  class="w-full bg-main_blue text-white flex justify-between items-center font-playfair h-16 px-5 shadow-lg shadow-main_shadow_gray">
   <div class="">
     <a href="/j9l4u8eojl/admin">
       <div class="flex justify-between items-center">

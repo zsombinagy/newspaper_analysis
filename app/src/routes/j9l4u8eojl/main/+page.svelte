@@ -1,12 +1,11 @@
 
 <script lang="ts">
     import AdminNav from "../../../components/AdminNav.svelte";
+  import ArticleAnalysis from "../../../components/ArticleAnalysis.svelte";
 
 </script>
 <div>
     <AdminNav></AdminNav>
+    <ArticleAnalysis></ArticleAnalysis>
 </div>
-<div>
 
-    <p>Bejelentkeztél</p>
-</div>
