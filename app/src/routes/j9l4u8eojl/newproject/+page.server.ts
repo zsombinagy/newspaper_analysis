@@ -1,6 +1,7 @@
 import { redirect} from "@sveltejs/kit"
 import type { RequestEvent } from "../../oauth/$types"
 
+
 export const load = async (event: RequestEvent) =>  {
     const {cookies} = event
     const session = cookies.get("session")
@@ -11,4 +12,13 @@ export const load = async (event: RequestEvent) =>  {
 
     } 
 
+
+
+}
+
+
+export const actions = {
+    chatGPT: async()=>{
+        console.log()
+    }
 }

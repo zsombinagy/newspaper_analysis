@@ -10,3 +10,5 @@ export const adminInfoSchema = z.object({
 export const messageSchema = z.object({
     msg: z.string()
 })
+
+export type AdminInfoType = z.infer<typeof adminInfoSchema> | null

@@ -6,7 +6,7 @@ import { treaty } from "@elysiajs/eden";
 import { type AUTHORIZATION } from "../../../../backend/src/routes/authorization"
 import { PUBLIC_RPC_URL, PUBLIC_GOOGLE_CLIENT_ID, PUBLIC_GOOGLE_REDIRECT, PUBLIC_CLIENT_SECRET } from "$env/static/public";
 import { error } from '@sveltejs/kit';
-import type { AdminInfoType } from "../../stores/stores";
+import { type AdminInfoType } from "../../modell";
 
 
 
