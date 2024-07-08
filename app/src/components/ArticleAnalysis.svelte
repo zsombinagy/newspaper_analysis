@@ -3,7 +3,7 @@
 
 <main class="flex flex-col items-center font-playfair pb-10 ">
   <div
-    class="my-10 border border-main_blue p-2 rounded shadow-lg shadow-main_shadow_gray"
+    class="my-10 border border-main_blue p-2 rounded shadow-lg shadow-main_shadow_gray md:w-3/6"
   >
     <input
       type="text"
@@ -33,53 +33,28 @@
       <div class="border-b-2 border-main_blue pt-3 pb-1"><input class="w-full focus:outline-none" type="text" placeholder="újság neve" /></div>
     </div>  
 
-    <div class="mt-5">
-      <div class="pb-2">
-        <h3>Cikk címe</h3>
+ 
+
+      <div class="border-b-2 border-main_blue pb-2 flex flex-col my-5">
+        <label class="mb-2" for="">Cikk címe</label>
+        <textarea class="w-full focus:outline-none" name="" id="" rows="1" placeholder="Cikk címének tárgyalása"></textarea>
       </div>
-      <div class="border-b-2 border-main_blue pb-2">
-        <input class="w-full focus:outline-none" type="text" placeholder="Cikk címének tárgyalása" />
+      <div class="border-b-2 border-main_blue pb-2 flex flex-col my-5">
+        <label class="mb-2" for="">Objektivitás</label>
+        <textarea class="w-full focus:outline-none" name="" id="" rows="4" placeholder="Objektivitás tárgyalása"></textarea>
       </div>
-    </div>
-    <div class="mt-5">
-      <div class="pb-2">
-        <h3>Objektivitás</h3>
+      <div class="border-b-2 border-main_blue pb-2 flex flex-col my-5">
+        <label class="mb-2" for="">Nyelvezet stílus</label>
+        <textarea class="w-full focus:outline-none" name="" id="" rows="4" placeholder="Nyelvezet stílus tárgyalása"></textarea>
       </div>
-      <div class="border-b-2 border-main_blue pb-2">
-        <input class="w-full focus:outline-none" type="text" placeholder="Objektivitásának tárgyalása" />
+      <div class="border-b-2 border-main_blue pb-2 flex flex-col my-5">
+        <label class="mb-2" for="">Kinek szól</label>
+        <textarea class="w-full focus:outline-none" name="" id="" rows="4" placeholder="Kinek szól tárgyalása"></textarea>
       </div>
-    </div>
-    <div class="mt-5">
-      <div class="pb-2">
-        <h3>Nyelvezet stílus</h3>
-      </div>
-      <div class="border-b-2 border-main_blue pb-2">
-        <input class="w-full focus:outline-none" type="text" placeholder="Nyelvezet tárgyalása" />
-      </div>
-    </div>
-    <div class="mt-5">
-      <div class="pb-2">
-        <h3>Író véleménye</h3>
-      </div>
-      <div class="border-b-2 border-main_blue pb-2">
-        <input class="w-full focus:outline-none" type="text" placeholder="Író véleményének tárgyalása" />
-      </div>
-    </div>
-    <div class="mt-5">
-      <div class="pb-2">
-        <h3>Kinek szól</h3>
-      </div>
-      <div class="border-b-2 border-main_blue pb-2">
-        <input class="w-full focus:outline-none" type="text" placeholder="Kinek szól tárgyalása" />
-      </div>
-    </div>
-    <div class="mt-5">
-      <div class="pb-2">
-        <h3>Külső források</h3>
-      </div>
-      <div class="border-b-2 border-main_blue pb-2">
-        <input class="w-full focus:outline-none" type="text" placeholder="Források tárgyalása" />
-      </div>
-    </div>
+      <div class="border-b-2 border-main_blue pb-2 flex flex-col my-5">
+        <label class="mb-2" for="">Források</label>
+        <textarea class="w-full focus:outline-none" name="" id="" rows="4" placeholder="Források tárgyalása"></textarea>
+      </div>    
+  
   </div>
 </main>
