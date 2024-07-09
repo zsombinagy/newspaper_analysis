@@ -17,6 +17,7 @@ export const articleController = new Elysia()
       const receivedArticle = await database
         .insert(articles)
         .values({
+          title: article.title,
           originalArticleUrl: article.originalArticleUrl,
           newsPortal: article.newsPortal,
           topicId: topicId,
@@ -70,6 +71,7 @@ export const articleController = new Elysia()
       const receivedArticle = await database
         .update(articles)
         .set({
+          title: article.title,
           originalArticleUrl: article.originalArticleUrl,
           newsPortal: article.newsPortal,
           isDraft: article.isDraft,

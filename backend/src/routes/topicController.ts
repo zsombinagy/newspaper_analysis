@@ -43,6 +43,7 @@ export const topicController = new Elysia()
           originalArticleUrl: article.originalArticleUrl,
           newsPortal: article.newsPortal,
           topicId: topicId,
+          title: article.title
         })
         .returning();
 
@@ -94,6 +95,7 @@ export const topicController = new Elysia()
         title: topic.title,
         section: topic.section,
         isDraft: topic.isDraft,
+        
       })
       .where(eq(topics.id, topicId))
       .returning();

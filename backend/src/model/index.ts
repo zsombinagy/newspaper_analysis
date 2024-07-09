@@ -30,6 +30,7 @@ export const newArticleSchema = Type.Object({
   newsPortal: Type.String(),
   subsections: Type.Array(newSubsectionSchema),
   sources: Type.Array(newSourceSchema),
+  title: Type.String()
 });
 
 export const newTopicSchema = Type.Object({

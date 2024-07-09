@@ -12,6 +12,7 @@ export const topics = pgTable("topics", {
 export const articles = pgTable("articles", {
     id: uuid("id").primaryKey().defaultRandom(),
     originalArticleUrl: text("originalArticleUrl").notNull(),
+    title: text("title").notNull(),
     newsPortal: varchar("newsPortal", {length: 255}).notNull(),
     isDraft: boolean("isDraft").default(false).notNull(),
     topicId: uuid("topicId").references(() => topics.id)
