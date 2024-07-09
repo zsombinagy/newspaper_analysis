@@ -6,6 +6,7 @@ import { contentController } from "./routes/contentController";
 import { sourceController } from "./routes/sourceController";
 import { subsectionController } from "./routes/subsectionController";
 import { topicController } from "./routes/topicController";
+import { openAIController } from "./routes/openaiController";
 
 
 const app = new Elysia()
@@ -17,6 +18,7 @@ const app = new Elysia()
   .use(sourceController)
   .use(subsectionController)
   .use(topicController)
+  .use(openAIController)
 
 
 

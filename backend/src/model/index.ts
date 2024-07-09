@@ -81,5 +81,17 @@ export const isDraftBodySchema = Type.Object({
   isDraft: Type.Boolean()
 })
 
+export const linksArraySchema = Type.Array(Type.String())
+
+export const analysedArticle = Type.Array(Type.Object({
+  link: Type.String(),
+  eredeti_cím: Type.String(),
+  cím: Type.String(),
+  források_nyelvezet: Type.String(),
+  objektivitás: Type.String(),
+  író_véleménye: Type.String(),
+  kinek_szól: Type.String()
+}));
+
 
 

@@ -1,5 +1,5 @@
 import { database } from "../database/setup";
-import { Elysia, ValidationError } from "elysia";
+import { Elysia } from "elysia";
 import { newAdminSchema, adminInfoSchema, tokenSchema } from "../model";
 import { admins } from "../database/schema";
 import { eq } from "drizzle-orm";

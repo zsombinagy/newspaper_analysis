@@ -16,7 +16,7 @@ export const safeParse = <const Schema extends TAnySchema>(
     const result = Value.Decode(schema, data)
     return { success: true, data: result }
   } catch (error) {
-
+    console.log(error)
     return { success: false }
   }
 }
