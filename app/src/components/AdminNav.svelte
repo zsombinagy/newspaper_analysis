@@ -20,14 +20,14 @@
 </script>
 
 <nav
-  class="w-full bg-main_blue text-white flex justify-between items-center font-playfair h-16 px-5 shadow-lg shadow-main_shadow_gray">
+  class="w-full bg-main_blue text-white flex justify-between items-center font-playfair h-28 px-5 shadow-lg shadow-main_shadow_gray">
   <div class="">
-    <a href="/j9l4u8eojl/admin">
+    <a href="/admin/admin">
       <div class="flex justify-between items-center">
-        <img src={adminPicture} alt="" class="size-8 mr-3 rounded-lg">
+        <img src={adminPicture} alt="" class="size-8 md:size-16 mr-3 rounded-lg">
         <div>
-            <p class="text-base md:text-xl">{adminName}</p>
-            <p class="hidden md:block text-xs">{adminEmail}</p>
+            <p class="text-base md:text-3xl">{adminName}</p>
+            <p class="hidden md:block text-xl">{adminEmail}</p>
         </div>
 
       </div>
@@ -50,22 +50,22 @@
   {#if isMenuOpen}
     <div class="absolute top-16 left-0 bg-main_blue w-full opacity-80 border-t-2 border-main_yellow md:hidden"  transition:fly={{ x: 0, y: 0,duration: 1000}}>
       <ul class="flex justify-center flex-col items-center pt-3">
-        <li class="pb-3"><a href="/j9l4u8eojl/ownprojects" class="border-b-2 border-white">Saját Projekteim</a></li>
-        <li class="pb-3"><a href="/j9l4u8eojl/allProjects" class="border-b-2 border-white">Összes projekt</a></li>
-        <li class="pb-3"><a href="/j9l4u8eojl/newproject" class="border-b-2 border-white">Új cikk elemzés</a></li>
+        <li class="pb-3"><a href="/admin/ownprojects" class="border-b-2 border-white">Saját Projekteim</a></li>
+        <li class="pb-3"><a href="/admin/allProjects" class="border-b-2 border-white">Összes projekt</a></li>
+        <li class="pb-3"><a href="/admin/newproject" class="border-b-2 border-white">Új cikk elemzés</a></li>
       </ul>
     </div>
   {/if}
   <div class="hidden md:flex items-center h-full">
-    <ul class="flex items-center h-full">
-      <li class="flex items-center align-middle h-full px-2 hover:bg-main_purple rounded">
-        <a href="/j9l4u8eojl/ownProjects" class="">Saját Projekteim</a>
+    <ul class="flex items-center h-full md:text-2xl">
+      <li class="flex items-center align-middle h-full px-2 hover:bg-main_shadow_blue rounded">
+        <a href="/admin/ownProjects" class="">Saját Projekteim</a>
       </li>
-      <li class="flex items-center h-full px-2 hover:bg-main_purple rounded">
-        <a href="/j9l4u8eojl/allProjects" class="">Összes projekt</a>
+      <li class="flex items-center h-full px-2 hover:bg-main_shadow_blue rounded">
+        <a href="/admin/allProjects" class="">Összes projekt</a>
       </li>
-      <li class="flex items-center h-full px-2 hover:bg-main_purple rounded">
-        <a href="/j9l4u8eojl/newproject" class="">Új cikk elemzés</a>
+      <li class="flex items-center h-full px-2 hover:bg-main_shadow_blue rounded">
+        <a href="/admin/newproject" class="">Új cikk elemzés</a>
       </li>
     </ul>
   </div>

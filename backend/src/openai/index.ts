@@ -43,7 +43,7 @@ const dataSchema = `Type.Array(Type.Object({
                     }))`
 
 
-const instructions =`Ön egy segítőkész asszisztens, aki a cikkeket, az objketivitás fényében, ezek a kritériumok alapján elemzi 1-2 mondatban:
+const instructions =`Ön egy segítőkész asszisztens, aki a cikkeket, az objektivitás fényében, ezek a kritériumok alapján elemzi 1-2 mondatban:
                     cím megfelelő?, források és hivatkozások amelyekre hivatkozik a cikkben?, nyelvezet
                     és stílus?, objektivitás?, az író véleménye kiderül?, kinek szólhat?, az adatokat egy JSON arrayben add vissza, ne legyen szöveg hozzá: ${dataSchema} `
 
@@ -61,7 +61,7 @@ export const newAnalysisAI = async (links: string[]): Promise<ReplyType> => {
     })
 
     const rawData = response.choices[0].message.content
-    console.log("Ennek jónak kéne lennie: " + rawData)
+  
 
     if(!rawData)
         return {success: false, msg: "Not get a content"}

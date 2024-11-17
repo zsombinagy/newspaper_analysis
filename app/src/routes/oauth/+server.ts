@@ -42,6 +42,7 @@ export const GET = async (event: RequestEvent) => {
 
 
     const responseCheckAdmin = await app.api.admin.login.post(adminInfoResponse.data)
+
     
 
     if(!responseCheckAdmin.data?.token) 

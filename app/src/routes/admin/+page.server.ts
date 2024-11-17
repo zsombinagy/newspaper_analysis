@@ -10,7 +10,7 @@ export const load = async (event: RequestEvent) =>  {
     const session = cookies.get("session")
 
     if (session) {
-        throw redirect(302, '/j9l4u8eojl/main')
+        throw redirect(302, '/admin/main')
 
     } 
 }

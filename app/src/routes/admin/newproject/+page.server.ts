@@ -13,7 +13,7 @@ export const load = async (event: RequestEvent) =>  {
     
     if (!session) {
         
-        throw redirect(302, '/j9l4u8eojl')
+        throw redirect(302, '/admin')
 
     } 
 }
@@ -28,7 +28,7 @@ export const actions = {
         const links = formData.get("links")
 
         if (!session) 
-            throw redirect(302, '/j9l4u8eojl')    
+            throw redirect(302, '/admin')    
      
 
         if (!links) 

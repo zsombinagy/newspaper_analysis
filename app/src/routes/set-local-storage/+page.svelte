@@ -12,7 +12,7 @@
       localStorage.setItem("adminName", adminName);
       localStorage.setItem("adminEmail", adminEmail)
       localStorage.setItem("adminPicture", adminPicture)
-      goto("/j9l4u8eojl");
+      goto("/admin");
     }
 
   });
